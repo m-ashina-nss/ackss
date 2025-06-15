@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=ackss;encrypt=true;trustServerCertificate=true
+    username: springuser
+    password: NewSecurePassword!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false
+  profiles:
+    active: demo  # 本番では prod に切り替える

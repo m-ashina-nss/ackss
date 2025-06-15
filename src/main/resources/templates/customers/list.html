@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>顧客一覧</title>
+</head>
+<body>
+<h1>顧客一覧</h1>
+<a th:href="@{/customers/new}">新規登録</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>生年月日</th>
+        <th>住所</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="c : ${customers}">
+        <td th:text="${c.id}">1</td>
+        <td th:text="${c.name}">山田太郎</td>
+        <td th:text="${c.birthDate}">1990-01-01</td>
+        <td th:text="${c.address}">東京</td>
+        <td>
+            <a th:href="@{/customers/{id}/edit(id=${c.id})}">編集</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
